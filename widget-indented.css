@@ -56,14 +56,14 @@ html {
 }
 
 body {
-  background-color: transparent;
+  background-color: green;
 }
 
 theodia-events .container {
   /* use em if you want to be relative to parent window properties or px if you want to override and have fixed sizes */
   font-size: 1em;
   line-height: 1.5em;
-    background-color : blue; 
+  background-color : blue; 
 }
 
 theodia-events .container .groups .group {
