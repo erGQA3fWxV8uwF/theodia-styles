@@ -1,0 +1,211 @@
+/*
+
+This file can be renamed and has to be hosted on a public location on the web.
+Then, configure a widget with custom CSS style and set enter the full address of file e.g https://mydomain.com/my-widget-style.css
+
+Example of widget considering only the custom css parameter
+<iframe src="https://theodia.org/widget/v1/events ? css=https://mydomain.com/my-widget-style.css" ></iframe>
+
+Dom model is built as follow :
+iframe (Root element)
+html
+    body
+        .theodia-events
+            .container
+                .none
+                .groups
+                    .group
+                        .date
+                        .events
+                            .event .xxxxxxx
+                                .time
+                                .infos
+                                    .infos-wrapper
+                                        .language
+                                        .rite
+                                        .name
+                                    .place
+                .footer
+                    .div
+
+List of classes :
+
+theodia-events .container {}
+theodia-events .container .none {}
+theodia-events .container .groups {}
+theodia-events .container .groups .group {}
+theodia-events .container .groups .group .date {}
+theodia-events .container .groups .group .events {}
+theodia-events .container .groups .group .events .event {}
+theodia-events .container .groups .group .events .event .time {}
+theodia-events .container .groups .group .events .event .infos {}
+theodia-events .container .groups .group .events .event .infos .infos-wrapper {}
+theodia-events .container .groups .group .events .event .infos .infos-wrapper .language {}
+theodia-events .container .groups .group .events .event .infos .infos-wrapper .rite {}
+theodia-events .container .groups .group .events .event .infos .infos-wrapper .name {}
+theodia-events .container .groups .group .events .event .infos .place {}
+theodia-events .container .footer {}
+theodia-events .container .footer div {}
+*/
+
+html {
+  color: #444;
+  background-color: transparent;
+  font-family: Helvetica, Arial, Sans-Serif, serif;
+  font-size: 14px;
+}
+
+body {
+  background-color: transparent;
+}
+
+theodia-events .container {
+  /* use em if you want to be relative to parent window properties or px if you want to override and have fixed sizes */
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+theodia-events .container .groups .group {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+theodia-events .container .groups .group:first-child {
+  padding-top: 0;
+}
+
+theodia-events .container .groups .group:not(:last-child) {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(136, 136, 136, 0.33);
+}
+
+theodia-events .container .groups .group .date {
+  width: 100px;
+  padding-top: 3px;
+  padding-right: 8px;
+  border-radius: 42px;
+  color: white;
+  background-color: blue;
+  font-weight: bold;
+}
+
+theodia-events .container .groups .group .events {
+}
+
+theodia-events .container .groups .group .events .event {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-top: 4px;
+  padding-right: 16px;
+  padding-bottom: 4px;
+  padding-left: 0;
+  color: inherit;
+  transition: padding 0.2s ease, background-color 0.2s ease;
+  text-decoration: none;
+}
+
+theodia-events .container .groups .group .events .event:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+theodia-events .container .groups .group .events .event:active {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+theodia-events .container .groups .group .events .event:hover {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+theodia-events .container .groups .group .events .event .time {
+  width: 50px;
+}
+
+theodia-events .container .groups .group .events .event .infos .infos-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+theodia-events
+  .container
+  .groups
+  .group
+  .events
+  .event
+  .infos
+  .infos-wrapper
+  .language {
+  width: 50px;
+}
+
+theodia-events
+  .container
+  .groups
+  .group
+  .events
+  .event
+  .infos
+  .infos-wrapper
+  .rite {
+  width: 50px;
+}
+
+theodia-events
+  .container
+  .groups
+  .group
+  .events
+  .event
+  .infos
+  .infos-wrapper
+  .name {
+  -ms-flex: 1;
+  flex: 1;
+}
+
+theodia-events .container .groups .group .events .event .infos .place {
+}
+
+theodia-events .container .footer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  height: 36px;
+  -ms-flex-pack: center;
+  -ms-flex-align: stretch;
+}
+
+theodia-events .container .footer div {
+  -ms-flex: 1;
+  flex: 1;
+  padding: 5px;
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+}
+
+theodia-events .container .footer div:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+theodia-events .container .footer div:active {
+  background: rgba(0, 0, 0, 0.3);
+}
