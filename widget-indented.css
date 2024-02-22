@@ -93,7 +93,6 @@ theodia-events .container .groups .group .date {
     padding-top: 3px;
     padding-right: 8px;
     width: 100px;
-    color: blue !important;
 }
 
 theodia-events .container .groups .group .events {
@@ -185,5 +184,3 @@ theodia-events .container .footer div:hover {
 theodia-events .container .footer div:active {
     background: rgba(0, 0, 0, 0.3);
 }
-
-
