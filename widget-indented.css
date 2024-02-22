@@ -51,8 +51,8 @@ theodia-events .container .footer div {}
 
 html {
     font-size: 14px;
-    background-color: #006783;
-    font-family: Helvetica, Arial, sans-serif;
+    background-color: transparent;
+    font-family: Helvetica, Arial, Sans-Serif, serif;
     color: #444;
 }
 
@@ -61,49 +61,56 @@ body {
 }
 
 theodia-events .container {
+    /* use em if you want to be relative to parent window properties or px if you want to override and have fixed sizes */
     font-size: 1em;
     line-height: 1.5em;
 }
 
 theodia-events .container .groups .group {
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-direction: row;
     flex-direction: row;
-    padding: 8px 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
     margin-bottom: 8px;
-    border-radius: 8px;
-    overflow: hidden;
 }
 
 theodia-events .container .groups .group:first-child {
     padding-top: 0;
 }
 
-.theodia-events .container .groups .group:not(:last-child) {
+theodia-events .container .groups .group:not(:last-child) {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
     border-bottom: 1px solid rgba(136, 136, 136, 0.33);
 }
 
 theodia-events .container .groups .group .date {
     font-weight: bold;
-    padding: 3px 8px 0 0;
+    padding-top: 3px;
+    padding-right: 8px;
     width: 100px;
-    background-color: #006783;
-    color: #fff;
 }
 
 theodia-events .container .groups .group .events {
-    background-color: #FDF9F0;
-    border-radius: 8px;
-    padding: 8px;
+
 }
 
 theodia-events .container .groups .group .events .event {
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-direction: row;
     flex-direction: row;
-    padding: 8px 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 0;
     padding-right: 16px;
     transition: padding .2s ease, background-color .2s ease;
     text-decoration: none;
-    color: #006783;
+    color: inherit;
 }
 
 theodia-events .container .groups .group .events .event:not(:last-child) {
@@ -113,6 +120,7 @@ theodia-events .container .groups .group .events .event:not(:last-child) {
 theodia-events .container .groups .group .events .event:active {
     background: rgba(0, 0, 0, 0.2);
 }
+
 theodia-events .container .groups .group .events .event:hover {
     padding-left: 8px;
     padding-right: 8px;
@@ -120,33 +128,45 @@ theodia-events .container .groups .group .events .event:hover {
 
 theodia-events .container .groups .group .events .event .time {
     width: 50px;
-    font-size: 16px;
 }
 
 theodia-events .container .groups .group .events .event .infos .infos-wrapper {
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-direction: row;
     flex-direction: row;
 }
 
-theodia-events .container .groups .group .events .event .infos .infos-wrapper .language,
+theodia-events .container .groups .group .events .event .infos .infos-wrapper .language {
+    width: 50px;
+}
+
 theodia-events .container .groups .group .events .event .infos .infos-wrapper .rite {
     width: 50px;
 }
 
 theodia-events .container .groups .group .events .event .infos .infos-wrapper .name {
+    -ms-flex: 1;
     flex: 1;
-}theodia-events .container .groups .group .events .event .infos .place {
+}
+
+theodia-events .container .groups .group .events .event .infos .place {
 }
 
 theodia-events .container .footer {
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -ms-flex-pack: center;
     justify-content: center;
+    -ms-flex-align: stretch;
     align-items: stretch;
     height: 36px;
 }
 
 theodia-events .container .footer div {
+    -ms-flex: 1;
     flex: 1;
     margin: 0;
     text-align: center;
