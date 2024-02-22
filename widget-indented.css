@@ -51,7 +51,7 @@ theodia-events .container .footer div {}
 
 html {
     font-size: 14px;
-    background-color: green;
+    background-color: #006783;
     font-family: Helvetica, Arial, sans-serif;
     color: #444;
 }
@@ -70,6 +70,8 @@ body {
     flex-direction: row;
     padding: 8px 0;
     margin-bottom: 8px;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .theodia-events .container .groups .group:first-child {
@@ -84,17 +86,24 @@ body {
     font-weight: bold;
     padding: 3px 8px 0 0;
     width: 100px;
-    background-color: green;
+    background-color: #006783;
+    color: #fff;
+}
+
+.theodia-events .container .groups .group .events {
+    background-color: #FDF9F0;
+    border-radius: 8px;
+    padding: 8px;
 }
 
 .theodia-events .container .groups .group .events .event {
     display: flex;
     flex-direction: row;
-    padding: 4px 0 4px 0;
+    padding: 8px 0;
     padding-right: 16px;
     transition: padding .2s ease, background-color .2s ease;
     text-decoration: none;
-    color: blue;
+    color: #006783;
 }
 
 .theodia-events .container .groups .group .events .event:not(:last-child) {
@@ -112,6 +121,7 @@ body {
 
 .theodia-events .container .groups .group .events .event .time {
     width: 50px;
+    font-size: 16px;
 }
 
 .theodia-events .container .groups .group .events .event .infos .infos-wrapper {
@@ -157,4 +167,5 @@ body {
 .theodia-events .container .footer div:active {
     background: rgba(0, 0, 0, 0.3);
 }
+
 
